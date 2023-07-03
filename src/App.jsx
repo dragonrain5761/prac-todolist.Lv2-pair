@@ -1,24 +1,24 @@
 import React, { useState } from "react";
-import './App.css';
+import "./App.css";
 import TodoList from "./components/TodoList";
 import Button from "./components/Button";
 
 function App() {
   const [todos, setTodos] = useState([
-    { id: 1, title: '1주 과제', body: '과제끝내기!', isDone: false },
-    { id: 2, title: '1주 강의', body: '강의 수강 완료하기!', isDone: true },
+    { id: 1, title: "1주 과제", body: "과제끝내기!", isDone: false },
+    { id: 2, title: "1주 강의", body: "강의 수강 완료하기!", isDone: true },
   ]);
 
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
 
   const titleChangeHandler = (event) => {
-    setTitle(event.target.value)
-  }
+    setTitle(event.target.value);
+  };
 
   const bodyChangeHandler = (event) => {
-    setBody(event.target.value)
-  }
+    setBody(event.target.value);
+  };
 
   const clickAddBtnHandler = () => {
     const newTodo = {
@@ -33,7 +33,7 @@ function App() {
   const clickRemoveBtnHandler = (id) => {
     const newTodo = todos.filter((todo) => todo.id !== id);
     setTodos(newTodo);
-  }
+  };
 
   const doneTodoHandler = (id) => {
     const newTodoList = todos.map((todo) => {
@@ -43,7 +43,7 @@ function App() {
       return todo;
     });
     setTodos(newTodoList);
-  }
+  };
 
   return (
     <div>
@@ -93,6 +93,6 @@ function App() {
       </div>
     </div>
   );
-};
+}
 
 export default App;
