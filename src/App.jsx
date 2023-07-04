@@ -1,34 +1,9 @@
 import React from "react";
 import "./App.css";
-import { styled } from "styled-components";
-import TodoCreator from "./components/TodoCreator";
-import TodoEditor from "./components/TodoEditor";
+import Router from "./shared/Router";
 
 function App() {
-  return (
-    <StLayout>
-      <StContainer>
-        <div>My Todo List</div>
-        <div>React</div>
-      </StContainer>
-      <TodoCreator></TodoCreator>
-      <TodoEditor></TodoEditor>
-    </StLayout>
-  );
+  return <Router />;
 }
 
 export default App;
-
-const StLayout = styled.section`
-  max-width: 1440px;
-  margin: 0 auto;
-`;
-
-const StContainer = styled.div`
-  align-items: center;
-  border: 1px solid #ddd;
-  display: flex;
-  height: 50px;
-  justify-content: space-between;
-  padding: 0 20px;
-`;

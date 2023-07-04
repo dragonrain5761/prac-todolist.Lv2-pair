@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import TodoPages from "./TodoPages";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { deleteTodo, doneTodo, cancelTodo } from "../redux/modules/todos";
 
 const TodoEditor = () => {
@@ -50,7 +49,9 @@ const TodoEditor = () => {
                     완료
                   </StCompleteButton>
                 </StButtonSet>
-                <TodoPages />
+                <Link to={`/${item.id}`}>
+                  <StPageButton>상세페이지</StPageButton>
+                </Link>
               </StTodoContainer>
             );
           }
@@ -77,7 +78,9 @@ const TodoEditor = () => {
                     취소
                   </StCompleteButton>
                 </StButtonSet>
-                <TodoPages />
+                <Link to={`/${item.id}`}>
+                  <StPageButton>상세페이지</StPageButton>
+                </Link>
               </StTodoContainer>
             );
           }
@@ -150,4 +153,14 @@ const StCompleteButton = styled.button`
   width: 50%;
   background-color: #fff;
   border: 2px solid green;
+`;
+
+const StPageButton = styled.button`
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 40px;
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid black;
 `;
