@@ -27,7 +27,6 @@ function TodoCreator() {
     if (body === "") return alert("내용을 입력하세요.");
     dispatch(
       addTodo({
-        id: todoList.length + 1,
         title: title,
         body: body,
         isDone: false,

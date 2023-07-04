@@ -53,11 +53,18 @@ const initialState = {
 
 // Reducer
 const todos = (state = initialState, action) => {
+  //랜덤 ID값 생성에 필요
+  const generateRandomId = () => {
+    const randomNumber = Math.floor(Math.random() * 100000);
+    return randomNumber;
+  };
+
   switch (action.type) {
     case CREATE_TODO:
+      const uniqueId = generateRandomId();
       return {
         ...state,
-        todos: [...state.todos, action.payload],
+        todos: [...state.todos, { id: uniqueId, ...action.payload }],
       };
     case DELETE_TODO:
       return {

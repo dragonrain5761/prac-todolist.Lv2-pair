@@ -19,7 +19,8 @@ function TodoListPage() {
 export default TodoListPage;
 
 const StLayout = styled.section`
-  max-width: 1440px;
+  max-width: 1200px;
+  min-width: 800px;
   margin: 0 auto;
 `;
 
